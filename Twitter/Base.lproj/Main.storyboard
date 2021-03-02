@@ -99,7 +99,7 @@
                                 <connections>
                                     <outlet property="profileImageView" destination="cv2-PH-arA" id="ucw-1J-JCH"/>
                                     <outlet property="tweetContent" destination="cV7-yg-Kmg" id="YvR-nG-V9B"/>
-                                    <outlet property="userNameLabel" destination="cV7-yg-Kmg" id="y8h-S8-YyN"/>
+                                    <outlet property="userNameLabel" destination="Sf3-VR-cFH" id="PCa-iV-TaY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -26,7 +26,7 @@ class HomeTableViewController: UITableViewController {
     @objc func loadTweets() {
         numberOfTweets = 20
         let tweetsUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        let tweetParams = ["counts": numberOfTweets]
+        let tweetParams = ["count": numberOfTweets]
         
         TwitterAPICaller.client?.getDictionariesRequest(url: tweetsUrl, parameters: tweetParams as [String : Any], success: { (tweets: [NSDictionary]) in
             
@@ -44,10 +44,9 @@ class HomeTableViewController: UITableViewController {
     }
     
     func loadMoreTweets() {
-        
-        numberOfTweets = numberOfTweets + 20
+        numberOfTweets = numberOfTweets + 10
         let tweetsUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        let tweetParams = ["counts": numberOfTweets]
+        let tweetParams = ["count": numberOfTweets]
         
         TwitterAPICaller.client?.getDictionariesRequest(url: tweetsUrl, parameters: tweetParams as [String : Any], success: { (tweets: [NSDictionary]) in
             
@@ -79,6 +78,7 @@ class HomeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCellTableViewCell
         
         let user = tweetArray[indexPath.row]["user"] as! NSDictionary
+        print(user)
         cell.userNameLabel.text = user["name"] as? String
         cell.tweetContent.text = tweetArray[indexPath.row]["text"] as? String
        
